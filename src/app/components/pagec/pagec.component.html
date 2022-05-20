@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PageA, coleccion de peliculas del TP3 de PySW">
+    <title>Traductor</title>
+</head>
+
+<body>
+    <br>
+    <div class="container-fluid">
+        <form [formGroup]="traductorForm">
+            <div class="row">
+                <div class="radio-toolbar col-md-3 col-sm-6 col-6">
+                    <input type="radio" id="italiano" name="idioma" value="it" formControlName="idioma">
+                    <label class="col-md-12 col-sm-12 col-12" for="italiano">&nbsp;<img
+                            src="../../../assets/img/flagItalia.png">&nbsp;Italiano</label>
+                </div>
+                <div class="radio-toolbar col-md-3 col-sm-6 col-6">
+                    <input type="radio" id="frances" name="idioma" value="fr" formControlName="idioma">
+                    <label class="col-md-12 col-sm-12 col-12" for="frances">&nbsp;<img
+                            src="../../../assets/img/flagFrancia.png">&nbsp;Francés</label>
+                </div>
+                <div class="radio-toolbar col-md-3 col-sm-6 col-6">
+                    <input type="radio" id="ingles" name="idioma" value="en" formControlName="idioma">
+                    <label class="col-md-12 col-sm-12 col-12" for="ingles">&nbsp;<img
+                            src="../../../assets/img/flagGB.png">&nbsp;Inglés</label>
+                </div>
+                <div class="radio-toolbar col-md-3 col-sm-6 col-6">
+                    <input type="radio" id="español" name="idioma" value="es" formControlName="idioma">
+                    <label class="col-md-12 col-sm-12 col-12" for="español">&nbsp;<img
+                            src="../../../assets/img/flagEsp.png">&nbsp;Español</label>
+                </div>
+            </div>
+            <br>
+            <textarea class="form-control" placeholder=" Ingrese el texto a traducir" #textoATraducir rows="10"></textarea>
+            <br><br>
+            <div class="row">
+                <div class="radio-toolbar col-md-3 col-sm-6 col-6">
+                    <input type="radio" id="italiano2" name="idioma2" value="it" formControlName="idioma2">
+                    <label class="col-md-12 col-sm-12 col-12" for="italiano2">&nbsp;<img
+                            src="../../../assets/img/flagItalia.png">&nbsp;Italiano</label>
+                </div>
+                <div class="radio-toolbar col-md-3 col-sm-6 col-6">
+                    <input type="radio" id="frances2" name="idioma2" value="fr" formControlName="idioma2">
+                    <label class="col-md-12 col-sm-12 col-12" for="frances2">&nbsp;<img
+                            src="../../../assets/img/flagFrancia.png">&nbsp;Francés</label>
+                </div>
+                <div class="radio-toolbar col-md-3 col-sm-6 col-6">
+                    <input type="radio" id="ingles2" name="idioma2" value="en" formControlName="idioma2">
+                    <label class="col-md-12 col-sm-12 col-12" for="ingles2">&nbsp;<img
+                            src="../../../assets/img/flagGB.png">&nbsp;Inglés</label>
+                </div>
+                <div class="radio-toolbar col-md-3 col-sm-6 col-6">
+                    <input type="radio" id="español2" name="idioma2" value="es" formControlName="idioma2">
+                    <label class="col-md-12 col-sm-12 col-12" for="español2">&nbsp;<img
+                            src="../../../assets/img/flagEsp.png">&nbsp;Español</label>
+                </div>
+            </div>
+            <br>
+            <button class="btn btn-success boton" type="submit" (click)="traducir(textoATraducir.value)">Traducir</button>
+        </form>
+        <br><br>
+        <textarea class="form-control" placeholder="Texto traducido" rows="10" [(ngModel)]="textoTraducido"></textarea>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-success boton2" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                  </svg></button>
+            </div>
+            <div class="d-block d-sm-block d-md-none d-lg-none d-xl-none">
+                <br>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-success boton2" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eraser" viewBox="0 0 16 16">
+                    <path d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828l6.879-6.879zm2.121.707a1 1 0 0 0-1.414 0L4.16 7.547l5.293 5.293 4.633-4.633a1 1 0 0 0 0-1.414l-3.879-3.879zM8.746 13.547 3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293l.16-.16z"/>
+                  </svg></button>
+            </div>
+            <div class="d-block d-sm-block d-md-none d-lg-none d-xl-none">
+                <br>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-success boton2" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
+                    <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+                  </svg></button>
+            </div>
+        </div>
+    </div>
+    <br>
+</body>
+
+</html>

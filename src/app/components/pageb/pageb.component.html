@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PageA, coleccion de peliculas del TP3 de PySW">
+    <title>Calculadora de divisas</title>
+</head>
+
+<body>
+    <br>
+    <div class="container-fluid row">
+        <div class="col-md-8 d-none d-sm-none d-md-block">
+            <div class="tabla">Tabla de cambio de monedas</div>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="rowgroup">&nbsp;</th>
+                            <th scope="col"><img src="../../../assets/img/flagUsa.png" alt="">&nbsp; USD</th>
+                            <th scope="col"><img src="../../../assets/img/flagArg.png" alt="">&nbsp; ARS</th>
+                            <th scope="col"><img src="../../../assets/img/flagEUR.png" alt="">&nbsp; EUR</th>
+                            <th scope="col"><img src="../../../assets/img/flagJap.png" alt="">&nbsp; JPY</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="table-dark"><img src="../../../assets/img/flagUsa.png" alt="">&nbsp; 1 USD<br>
+                                Inverso</th>
+                            <th> 1 <br> 1 </th>
+                            <th>113,98758 <br> 0,0087719967</th>
+                            <th>0,92538857 <br> 1,0806594 </th>
+                            <th>126,52914 <br> 0,0079033178</th>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="table-dark"><img src="../../../assets/img/flagArg.png" alt="">&nbsp; 1 ARS<br>
+                                Inverso</th>
+                            <th>0,0087719967 <br> 113,98758</th>
+                            <th>1 <br> 1</th>
+                            <th>0,0081158045 <br> 123,20949</th>
+                            <th>1,1086911 <br> 0,90206078</th>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="table-dark"><img src="../../../assets/img/flagEUR.png" alt="">&nbsp; 1 EUR<br>
+                                Inverso</th>
+                            <th>1,0806594 <br> 0,92538857</th>
+                            <th>123,20949 <br> 0,0081158045</th>
+                            <th>1 <br> 1</th>
+                            <th>136,63199 <br> 0,00731893</th>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="table-dark"><img src="../../../assets/img/flagJap.png" alt="">&nbsp;1 JPY<br> Inverso
+                            </th>
+                            <th>0,0079033178 <br> 126,52914</th>
+                            <th>0,90206078 <br> 1,1086911</th>
+                            <th>0,00731893 <br> 136,63199</th>
+                            <th>1 <br> 1</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <aside class="col-md-4 col-sm-12 ">
+            <div class="tabla">Conversor de Divisas</div>
+            <form class="forms" [formGroup]="divisaForm">
+                <div class="form-group">
+                    <label for="cantidad">Cantidad:</label>
+                    <input class="form-control" type="text" #value required>
+                </div>
+                <div class="form-group">
+                    <label for="de">De:</label>
+                    <select class="form-control" formControlName="from" required>
+                        <option value="" disabled >Seleccione una moneda</option>
+                        <option value="USD" >USD</option>
+                        <option value="ARS" >ARS</option>
+                        <option value="EUR" >EUR</option>
+                        <option value="JPY" >JPY</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="a">A:</label>
+                    <select class="form-control" formControlName="to" required>
+                        <option value="" disabled >Seleccione una moneda</option>
+                        <option value="USD" >USD</option>
+                        <option value="ARS" >ARS</option>
+                        <option value="EUR" >EUR</option>
+                        <option value="JPY" >JPY</option>
+                    </select>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input class="form-control"  type="text" formControlName="resultado">
+                </div>
+                <br>
+                <!--{{from}}
+                {{to}}
+            
+            {{value.value}}
+            {{resultado}}-->
+                <button class="btn btn-success boton" type="submit" (click)="calcularCambioDivisa(value.value)">Convertir -></button>
+            </form>
+        </aside>
+    </div>
+
+</body>
+
+</html>
