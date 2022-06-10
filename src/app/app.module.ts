@@ -7,6 +7,7 @@ import { Page1Component } from './components/page1/page1.component';
 import { PageaComponent } from './components/pagea/pagea.component';
 import { PagebComponent } from './components/pageb/pageb.component';
 import { PagecComponent } from './components/pagec/pagec.component';
+import { PagedComponent } from './components/paged/paged.component';
 import { IndexComponent } from './components/index/index.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -19,6 +20,7 @@ import {HttpClientModule} from '@angular/common/http';
     PageaComponent,
     PagebComponent,
     PagecComponent,
+    PagedComponent,
     IndexComponent,
     HeaderComponent,
     FooterComponent,

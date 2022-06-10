@@ -1,0 +1,26 @@
+body {
+    background-image: url('../../../assets/img/gif.gif');
+    /*rgb(16, 97, 97)*/
+    height: 700px;
+    background-size: cover;
+    background-position: center -300px;
+    width: auto;
+    
+    color: white;
+
+}
+
+@media (min-width: 1200px) {
+    body {
+        height: 800px;
+    }
+}
+
+button {
+    width: 100%;
+}
+
+button:hover {
+    background-color: green;
+    border-color: rgb(1, 92, 1);
+}
